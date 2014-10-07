@@ -6,10 +6,23 @@ import sys
 def make_chains(fileObject):
     """Takes an input text as a string and returns a dictionary of
     markov chains."""
-    
+    markov_dict = {}
+
     for line in fileObject:
         noSpaceInFile=line.strip().split()
         print noSpaceInFile
+
+    #for i in (len(noSpaceInFile)):
+        #go through the list of words, add words phrases to a tuple
+        #keep the 2 part of the tuple, move 1 forward, append the next word
+        #
+
+
+
+        #find the words that follow the binary word
+        #we want to get the word, and add that to a dictionary.
+
+
 
 
 
