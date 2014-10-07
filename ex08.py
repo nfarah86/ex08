@@ -7,10 +7,25 @@ def make_chains(fileObject):
     """Takes an input text as a string and returns a dictionary of
     markov chains."""
     markov_dict = {}
+    markov_key_tuple = ()
 
+    count = 0
     for line in fileObject:
         noSpaceInFile=line.strip().split()
-        print noSpaceInFile
+        #print noSpaceInFile
+
+
+    for i in noSpaceInFile:
+        if count < len(noSpaceInFile)-1:
+            print noSpaceInFile[count], noSpaceInFile[count + 1]
+            count += 1
+
+
+    # for count in range(len(noSpaceInFile)):
+    #     print noSpaceInFile[count - 1], noSpaceInFile[count]
+    #     count +=1
+
+
 
     #for i in (len(noSpaceInFile)):
         #go through the list of words, add words phrases to a tuple
