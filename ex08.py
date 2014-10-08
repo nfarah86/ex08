@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import random
 import sys
 
 
@@ -34,17 +34,18 @@ def make_text(chains):
     based off an original text."""
 
     #generate text. use random or list sample
+    for keys in chains:
+        #print the key, then print the sampled values
+        print keys[1], random.sample(chains[keys],1)
 
-    for key, value in chains:
-        print key, value
 
-    return {}
 
 
 
 def main():
     fileObject = open(sys.argv[1])
     chain_dict = make_chains(fileObject)
+    return make_text(chain_dict)
 
     # Change this to read input_text from a file
     #input_text = "Some text"
