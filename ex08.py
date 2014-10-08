@@ -31,17 +31,34 @@ def make_chains(fileObject):
 def make_text(chains):
     """Takes a dictionary of markov chains and returns random text
     based off an original text."""
-
+    new_text = []
     temp_key = random.choice(chains.keys())
-    print "Here is the temp key: %s, %s" % temp_key
-    print chains[temp_key]
+    new_text.append(temp_key[0])
+    new_text.append(temp_key[1])  
+ #   new_text.append(temp_key_initial)
 
+
+
+    #print "Here is the temp key: %s, %s" % temp_key
+    #print chains[temp_key]
     while temp_key in chains:
         new_value = random.choice(chains[temp_key])
-        print new_value
+        stringkey= " ".join(temp_key)
+        new_text.append(new_value)
+        #new_text.append(stringkey + " " +new_value)
         temp_key = temp_key[1], new_value
-        print temp_key
-        break
+
+        for char in temp_key:
+            if char == ["?", "!", "."]:
+                break
+            else:
+                continue
+
+    print " ".join(new_text)
+
+
+
+
 
     #choose random key
     #choose random value from [key]value
