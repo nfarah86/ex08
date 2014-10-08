@@ -24,7 +24,6 @@ def make_chains(fileObject):
                 markov_dict[word_tuple].append(noSpaceInFile[count + 2])   
             # print "Word tuple: %r and Word Value: %r" % (word_tuple, word_value)
             count+= 1
-    
 
     return markov_dict
 
@@ -33,10 +32,21 @@ def make_text(chains):
     """Takes a dictionary of markov chains and returns random text
     based off an original text."""
 
-    #generate text. use random or list sample
     for keys in chains:
-        #print the key, then print the sampled values
-        print keys[1], random.sample(chains[keys],1)
+        temp_key = random.choice(keys)
+        if temp_key not in chains[key]:
+            temp_value = chains[temp_key]
+    print temp_key, temp_value
+
+    #choose random key
+    #choose random value from [key]value
+    #print result of above
+    #append new key and new value into dictionary
+
+
+    # for keys in chains:
+    #     #print the key, then print the sampled values
+    #     print keys, random.choice(chains[keys])
 
 
 
