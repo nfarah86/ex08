@@ -8,42 +8,33 @@ def make_chains(fileObject):
     markov chains."""
     markov_dict = {}
     markov_key_tuple = ()
+    word_value = []
 
     count = 0
-    for line in fileObject:
-        noSpaceInFile=line.strip().split()
-        #print noSpaceInFile
+
+    
+    content = fileObject.read()
+    noSpaceInFile = content.split()
+
+    # for line in fileObject:
+    #     noSpaceInFile=line.strip() #.#split()
+    #     print noSpaceInFile
+    # print " "
 
 
     for i in noSpaceInFile:
-        if count < len(noSpaceInFile)-1:
-            print noSpaceInFile[count], noSpaceInFile[count + 1]
-            count += 1
+        if count < len(noSpaceInFile)-2:
+            word_tuple = noSpaceInFile[count], noSpaceInFile[count + 1]
+        
+            if word_tuple not in markov_dict:
+                markov_dict[word_tuple] = [noSpaceInFile[count + 2]]
+            else:
+                markov_dict[word_tuple].append(noSpaceInFile[count + 2])   
+            # print "Word tuple: %r and Word Value: %r" % (word_tuple, word_value)
+            count+= 1
+    
 
-
-    # for count in range(len(noSpaceInFile)):
-    #     print noSpaceInFile[count - 1], noSpaceInFile[count]
-    #     count +=1
-
-
-
-    #for i in (len(noSpaceInFile)):
-        #go through the list of words, add words phrases to a tuple
-        #keep the 2 part of the tuple, move 1 forward, append the next word
-        #
-
-
-
-        #find the words that follow the binary word
-        #we want to get the word, and add that to a dictionary.
-
-
-
-
-
-
-
-    return {}
+    return markov_dict
 
 
 
