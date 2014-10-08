@@ -7,19 +7,11 @@ def make_chains(fileObject):
     """Takes an input text as a string and returns a dictionary of
     markov chains."""
     markov_dict = {}
-    markov_key_tuple = ()
-    word_value = []
 
     count = 0
-
     
     content = fileObject.read()
     noSpaceInFile = content.split()
-
-    # for line in fileObject:
-    #     noSpaceInFile=line.strip() #.#split()
-    #     print noSpaceInFile
-    # print " "
 
 
     for i in noSpaceInFile:
@@ -37,18 +29,16 @@ def make_chains(fileObject):
     return markov_dict
 
 
-
-
-
-
-
-
-
 def make_text(chains):
     """Takes a dictionary of markov chains and returns random text
     based off an original text."""
-    return "Here's some random text."
 
+    #generate text. use random or list sample
+
+    for key, value in chains:
+        print key, value
+
+    return {}
 
 
 
